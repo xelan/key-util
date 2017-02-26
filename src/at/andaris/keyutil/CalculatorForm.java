@@ -43,7 +43,7 @@ import javax.swing.JOptionPane;
  */
 public class CalculatorForm extends javax.swing.JFrame {
 
-    public static final String VERSION = "0.1.1";
+    public static final String VERSION = "0.1.2";
 
     /**
      * Creates new form ContactEditor
@@ -124,10 +124,6 @@ public class CalculatorForm extends javax.swing.JFrame {
                     .add(lblHeading, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(jSeparator1)
                     .add(layout.createSequentialGroup()
-                        .add(lblBytes)
-                        .add(18, 18, 18)
-                        .add(txtBytes, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 54, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(layout.createSequentialGroup()
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(lblKey)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, lblResult))
@@ -138,11 +134,17 @@ public class CalculatorForm extends javax.swing.JFrame {
                                 .add(174, 174, 174)
                                 .add(lblInfo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 234, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(layout.createSequentialGroup()
-                                .add(txtKey, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 348, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                    .add(layout.createSequentialGroup()
+                                        .add(txtBytes, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 54, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(300, 300, 300))
+                                    .add(layout.createSequentialGroup()
+                                        .add(txtKey)
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)))
                                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                                     .add(btnCalculate, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .add(btnGenerate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 104, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))))
+                                    .add(btnGenerate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 104, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
+                    .add(lblBytes))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -153,13 +155,13 @@ public class CalculatorForm extends javax.swing.JFrame {
                 .add(29, 29, 29)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(lblKey, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(txtKey, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(btnGenerate))
+                    .add(btnGenerate)
+                    .add(txtKey, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(lblBytes)
-                    .add(txtBytes, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(btnCalculate))
+                    .add(btnCalculate)
+                    .add(txtBytes, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
