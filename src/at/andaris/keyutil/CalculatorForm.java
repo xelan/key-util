@@ -43,7 +43,7 @@ import javax.swing.JOptionPane;
  */
 public class CalculatorForm extends javax.swing.JFrame {
 
-    public static final String VERSION = "0.1.0";
+    public static final String VERSION = "0.1.1";
 
     /**
      * Creates new form ContactEditor
@@ -188,8 +188,13 @@ public class CalculatorForm extends javax.swing.JFrame {
             return;
         }
 
+        int n = 3;
+
         try {
-            int n = Integer.parseInt(numberBytes);
+            n = Integer.parseInt(numberBytes);
+            if (n < 1 || n > 32) {
+                throw new NumberFormatException();
+            }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Invalid number of bytes!");
 
@@ -198,7 +203,7 @@ public class CalculatorForm extends javax.swing.JFrame {
 
         String result = "";
         try {
-            result = Calculator.calcCheckSumFromKey(key, 3);
+            result = Calculator.calcCheckSumFromKey(key, n);
         } catch (NoSuchAlgorithmException e) {
             JOptionPane.showMessageDialog(this, "Hash SHA-256 is not supported on your platform.");
 
